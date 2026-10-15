@@ -4,140 +4,216 @@
     <meta charset="utf-8" />
     <title>PR 67 visual handoff</title>
     <style>
-      body { font-family: Georgia, serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #1c2430; }
+      body { font-family: system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #1c2430; line-height: 1.45; }
       h1 { font-size: 1.6rem; }
       figure { margin: 2rem 0; }
       img { max-width: 100%; height: auto; border: 1px solid #d5dbe3; }
       figcaption { margin-top: 0.5rem; }
       a { color: #1d4e89; }
-      .note { background: #f4f7fb; padding: 1rem; }
+      .note, .superseded { background: #f4f7fb; padding: 1rem; }
+      .superseded { background: #fff6e8; }
     </style>
   </head>
   <body>
     <h1>Pull request 67 visual handoff</h1>
     <p class="note">
       Public copy for review without a sign-in. The application repository is private.
-      These files are demonstration screenshots. They contain no channel credentials and no session token.
-      Håvar’s visual acceptance is still pending.
+      These files contain no channel credentials and no session token.
+      Håvar’s visual acceptance is still pending. Settings is not visually approved.
     </p>
     <p>
-      Settings ZIP:
+      Current evidence ZIP:
+      <a href="pr67-visual-evidence-fe68f0b.zip">pr67-visual-evidence-fe68f0b.zip</a>
+    </p>
+    <p>
+      The earlier ZIP
       <a href="settings-screenshots-d0a61c28.zip">settings-screenshots-d0a61c28.zip</a>
+      is superseded. It contains the defective Settings captures.
     </p>
 
-    <h2>Deployed preview Settings, d0a61c285b076db2dcf8b15d3baf69c2cc41669b</h2>
-
-    <figure>
-      <img src="settings/d0a61c28-settings-1440-signed-in-header.png" alt="Deployed Settings header at 1440" />
-      <figcaption>
-        SHA d0a61c28 · viewport 1440×900 · deployed preview ·
-        <a href="settings/d0a61c28-settings-1440-signed-in-header.png">header</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-1440-signed-in-property-details.png" alt="Deployed Settings property details at 1440" />
-      <figcaption>
-        SHA d0a61c28 · viewport 1440×900 · deployed preview ·
-        <a href="settings/d0a61c28-settings-1440-signed-in-property-details.png">property details</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-1440-signed-in-rooms.png" alt="Deployed Settings rooms at 1440" />
-      <figcaption>
-        SHA d0a61c28 · viewport 1440×900 · deployed preview ·
-        <a href="settings/d0a61c28-settings-1440-signed-in-rooms.png">rooms</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-1440-signed-in-currency-rates.png" alt="Deployed Settings currency and rates at 1440" />
-      <figcaption>
-        SHA d0a61c28 · viewport 1440×900 · deployed preview ·
-        <a href="settings/d0a61c28-settings-1440-signed-in-currency-rates.png">currency and rates</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-390-signed-in-currency-canopy-king.png" alt="Deployed Settings currency at 390" />
-      <figcaption>
-        SHA d0a61c28 · CSS viewport 390×844, bitmap 780×1688 · deployed preview ·
-        <a href="settings/d0a61c28-settings-390-signed-in-currency-canopy-king.png">currency and Canopy King</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-390-signed-in-garden-queen.png" alt="Deployed Settings Garden Queen at 390" />
-      <figcaption>
-        SHA d0a61c28 · CSS viewport 390×844, bitmap 780×1688 · deployed preview ·
-        <a href="settings/d0a61c28-settings-390-signed-in-garden-queen.png">Garden Queen and invitation</a>
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="settings/d0a61c28-settings-mobile-signed-in-header-890x1460.png" alt="Deployed Settings mobile header" />
-      <figcaption>
-        SHA d0a61c28 · bitmap 890×1460, not a 390 CSS viewport · deployed preview ·
-        <a href="settings/d0a61c28-settings-mobile-signed-in-header-890x1460.png">signed-in header</a>
-      </figcaption>
-    </figure>
-
-    <h2>Local component renders, not the deployed preview</h2>
+    <h2>Capture diagnosis</h2>
     <p>
-      Painted from PrerequisiteNotice at 7fb067b203100cd5c590fef9bdc60d408cb06b95.
-      These are not captures of the deployed Distribution Central page.
+      The published 1440 Settings files are 1440×900 bitmaps with a pixel-identical second sidebar.
+      The live page at 1440 CSS pixels had one sidebar, one main, and a scroll width of 1440.
+      The published 390 currency files are 780×1688 bitmaps, which is 390×844 CSS at device pixel ratio 2, with a copied band at the bottom.
+      A Chrome viewport capture with device pixel ratio 1 and capture beyond the viewport turned off produces a bitmap of the same size as the CSS viewport and does not repeat the sidebar or the bottom band.
+      The Cursor screenshot tool produced a 3730×2108 bitmap of the same 1440×900 page, so that export is not a viewport capture.
+      The duplication is in the earlier capture and export, not in the live page.
+    </p>
+    <p>
+      The signed-in Settings session was not available. The two images below are the signed-out staff shell on the deployed preview. They are a capture-method check, not Settings content, and they do not replace the signed-in sections.
     </p>
 
     <figure>
-      <img src="wizard/7fb067b-connection-setup-390.png" alt="Local connection setup notice at 390" />
+      <img src="capture-method/d0a61c28-signed-out-shell-1440x900.png" alt="Signed-out Settings shell at 1440" />
       <figcaption>
-        SHA 7fb067b · viewport 390×844 · local component render ·
-        <a href="wizard/7fb067b-connection-setup-390.png">connection setup</a>
+        Deployed preview d0a61c285b076db2dcf8b15d3baf69c2cc41669b.
+        CSS viewport 1440×900. Bitmap 1440×900.
+        Chrome DevTools viewport capture, device pixel ratio 1, not stitched.
+        Signed-out shell, not Settings content.
+        <a href="capture-method/d0a61c28-signed-out-shell-1440x900.png">image</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-connection-setup-1440.png" alt="Local connection setup notice at 1440" />
+      <img src="capture-method/d0a61c28-signed-out-shell-390x844.png" alt="Signed-out Settings shell at 390" />
       <figcaption>
-        SHA 7fb067b · viewport 1440×900 · local component render ·
-        <a href="wizard/7fb067b-connection-setup-1440.png">connection setup</a>
+        Deployed preview d0a61c285b076db2dcf8b15d3baf69c2cc41669b.
+        CSS viewport 390×844. Bitmap 390×844.
+        Chrome DevTools viewport capture, device pixel ratio 1, not stitched.
+        Signed-out shell, navigation closed. Not Settings content.
+        <a href="capture-method/d0a61c28-signed-out-shell-390x844.png">image</a>
+      </figcaption>
+    </figure>
+
+    <h2>Connection Wizard inside the local candidate</h2>
+    <p>
+      Application commit fe68f0b05916070ada0f375313885205b67fb27e, which contains the reviewed wording commit 7fb067b203100cd5c590fef9bdc60d408cb06b95.
+      Local Distribution Central, real fonts, styles, and shell.
+      Each Booking.com response was intercepted in the browser and is simulated. No channel connection was created.
+      Playwright viewport screenshot, device pixel ratio 1, one viewport, not stitched.
+      CSS viewport and bitmap are the same size.
+    </p>
+
+    <h3>1440×900</h3>
+    <figure>
+      <img src="wizard/fe68f0b/1440x900-loading.png" alt="Desktop loading notice" />
+      <figcaption>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated delayed response ·
+        <a href="wizard/fe68f0b/1440x900-loading.png">loading</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-rate-match-390.png" alt="Local rate match notice at 390" />
+      <img src="wizard/fe68f0b/1440x900-connection-setup.png" alt="Desktop incomplete connection setup" />
       <figcaption>
-        SHA 7fb067b · viewport 390×844 · local component render ·
-        <a href="wizard/7fb067b-rate-match-390.png">rate match</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated field connectionSetup · blocked, no Settings link, no Try again ·
+        <a href="wizard/fe68f0b/1440x900-connection-setup.png">connection setup</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-rate-match-1440.png" alt="Local rate match notice at 1440" />
+      <img src="wizard/fe68f0b/1440x900-rate-plan.png" alt="Desktop missing channel rate mapping" />
       <figcaption>
-        SHA 7fb067b · viewport 1440×900 · local component render ·
-        <a href="wizard/7fb067b-rate-match-1440.png">rate match</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated field ratePlan · blocked, no Settings link, no Try again ·
+        <a href="wizard/fe68f0b/1440x900-rate-plan.png">rate mapping</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-local-gap-390.png" alt="Local room and rate gap at 390" />
+      <img src="wizard/fe68f0b/1440x900-local-gap.png" alt="Desktop local room-type gap" />
       <figcaption>
-        SHA 7fb067b · viewport 390×844 · local component render ·
-        <a href="wizard/7fb067b-local-gap-390.png">local room and rate gap</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated field roomType · blocked, Settings link, no Try again ·
+        <a href="wizard/fe68f0b/1440x900-local-gap.png">local room-type gap</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-local-gap-1440.png" alt="Local room and rate gap at 1440" />
+      <img src="wizard/fe68f0b/1440x900-request-failure.png" alt="Desktop request failure" />
       <figcaption>
-        SHA 7fb067b · viewport 1440×900 · local component render ·
-        <a href="wizard/7fb067b-local-gap-1440.png">local room and rate gap</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated field connection · Try again, no Settings link ·
+        <a href="wizard/fe68f0b/1440x900-request-failure.png">request failure</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-request-failure-390.png" alt="Local request failure at 390" />
+      <img src="wizard/fe68f0b/1440x900-keyboard-focus.png" alt="Desktop Try again keyboard focus" />
       <figcaption>
-        SHA 7fb067b · viewport 390×844 · local component render ·
-        <a href="wizard/7fb067b-request-failure-390.png">request failure</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated · keyboard focus on Try again ·
+        <a href="wizard/fe68f0b/1440x900-keyboard-focus.png">keyboard focus</a>
       </figcaption>
     </figure>
     <figure>
-      <img src="wizard/7fb067b-request-failure-1440.png" alt="Local request failure at 1440" />
+      <img src="wizard/fe68f0b/1440x900-request-failure-retried.png" alt="Desktop notice after Try again" />
       <figcaption>
-        SHA 7fb067b · viewport 1440×900 · local component render ·
-        <a href="wizard/7fb067b-request-failure-1440.png">request failure</a>
+        fe68f0b · CSS 1440×900 · bitmap 1440×900 · local candidate · simulated · after Try again, a second request was made ·
+        <a href="wizard/fe68f0b/1440x900-request-failure-retried.png">after retry</a>
       </figcaption>
     </figure>
+
+    <h3>390×844</h3>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-nav-closed.png" alt="Mobile navigation closed" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · navigation closed ·
+        <a href="wizard/fe68f0b/390x844-nav-closed.png">navigation closed</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-nav-open.png" alt="Mobile navigation open" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · navigation open ·
+        <a href="wizard/fe68f0b/390x844-nav-open.png">navigation open</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-loading.png" alt="Mobile loading notice" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated delayed response ·
+        <a href="wizard/fe68f0b/390x844-loading.png">loading</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-connection-setup.png" alt="Mobile incomplete connection setup" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated field connectionSetup · blocked, no Settings link, no Try again ·
+        <a href="wizard/fe68f0b/390x844-connection-setup.png">connection setup</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-rate-plan.png" alt="Mobile missing channel rate mapping" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated field ratePlan · blocked, no Settings link, no Try again ·
+        <a href="wizard/fe68f0b/390x844-rate-plan.png">rate mapping</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-local-gap.png" alt="Mobile local room-type gap" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated field roomType · blocked, Settings link, no Try again ·
+        <a href="wizard/fe68f0b/390x844-local-gap.png">local room-type gap</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-request-failure.png" alt="Mobile request failure" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated field connection · Try again, no Settings link ·
+        <a href="wizard/fe68f0b/390x844-request-failure.png">request failure</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-keyboard-focus.png" alt="Mobile Try again keyboard focus" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated · keyboard focus on Try again ·
+        <a href="wizard/fe68f0b/390x844-keyboard-focus.png">keyboard focus</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/fe68f0b/390x844-request-failure-retried.png" alt="Mobile notice after Try again" />
+      <figcaption>
+        fe68f0b · CSS 390×844 · bitmap 390×844 · local candidate · simulated · after Try again, a second request was made ·
+        <a href="wizard/fe68f0b/390x844-request-failure-retried.png">after retry</a>
+      </figcaption>
+    </figure>
+
+    <h2 class="superseded">Superseded captures</h2>
+    <p class="superseded">
+      These Settings files and the earlier standalone wizard renders cannot support visual acceptance.
+      Desktop files repeat the sidebar and truncate the page. The 390 currency files repeat a band at the bottom.
+      The 890×1460 header is not a 390 CSS viewport.
+      The earlier wizard renders are the component alone, not Distribution Central.
+      The account email line was covered in the desktop header and the 890 header. That covering is a redaction, labelled here. The address is not in the replacement captures.
+    </p>
+    <ul>
+      <li><a href="settings/d0a61c28-settings-1440-signed-in-header.png">1440 header, superseded, email redacted</a></li>
+      <li><a href="settings/d0a61c28-settings-1440-signed-in-property-details.png">1440 property details, superseded</a></li>
+      <li><a href="settings/d0a61c28-settings-1440-signed-in-rooms.png">1440 rooms, superseded</a></li>
+      <li><a href="settings/d0a61c28-settings-1440-signed-in-currency-rates.png">1440 currency, superseded</a></li>
+      <li><a href="settings/d0a61c28-settings-390-signed-in-currency-canopy-king.png">390 currency, superseded, bitmap 780×1688</a></li>
+      <li><a href="settings/d0a61c28-settings-390-signed-in-garden-queen.png">390 Garden Queen, superseded, bitmap 780×1688</a></li>
+      <li><a href="settings/d0a61c28-settings-mobile-signed-in-header-890x1460.png">890 header, superseded, email redacted</a></li>
+      <li><a href="wizard/7fb067b-connection-setup-1440.png">standalone connection setup, 1440, superseded</a></li>
+      <li><a href="wizard/7fb067b-connection-setup-390.png">standalone connection setup, 390, superseded</a></li>
+      <li><a href="wizard/7fb067b-rate-match-1440.png">standalone rate match, 1440, superseded</a></li>
+      <li><a href="wizard/7fb067b-rate-match-390.png">standalone rate match, 390, superseded</a></li>
+      <li><a href="wizard/7fb067b-local-gap-1440.png">standalone local gap, 1440, superseded</a></li>
+      <li><a href="wizard/7fb067b-local-gap-390.png">standalone local gap, 390, superseded</a></li>
+      <li><a href="wizard/7fb067b-request-failure-1440.png">standalone request failure, 1440, superseded</a></li>
+      <li><a href="wizard/7fb067b-request-failure-390.png">standalone request failure, 390, superseded</a></li>
+    </ul>
   </body>
 </html>
