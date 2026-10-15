@@ -22,13 +22,18 @@
       Håvar’s visual acceptance is still pending. Settings is not visually approved.
     </p>
     <p>
-      Current evidence ZIP:
-      <a href="pr67-visual-evidence-fe68f0b.zip">pr67-visual-evidence-fe68f0b.zip</a>
+      Current wizard evidence ZIP:
+      <a href="pr67-visual-evidence-property-fixture.zip">pr67-visual-evidence-property-fixture.zip</a>
     </p>
-    <p>
-      The earlier ZIP
-      <a href="settings-screenshots-d0a61c28.zip">settings-screenshots-d0a61c28.zip</a>
-      is superseded. It contains the defective Settings captures.
+    <p class="superseded">
+      Superseded ZIP
+      <a href="pr67-visual-evidence-fe68f0b.zip">pr67-visual-evidence-fe68f0b.zip</a>.
+      Those wizard images are local Distribution Central at fe68f0b with intercepted Booking.com responses, but the property response was missing, so the heading fell back to the slug and the chip said Property unavailable.
+    </p>
+    <p class="superseded">
+      Superseded ZIP
+      <a href="settings-screenshots-d0a61c28.zip">settings-screenshots-d0a61c28.zip</a>.
+      It contains the defective Settings captures. Signed-in Settings captures remain a separate follow-up and are not wizard acceptance evidence.
     </p>
 
     <h2>Capture diagnosis</h2>
@@ -65,13 +70,148 @@
       </figcaption>
     </figure>
 
-    <h2>Connection Wizard inside the local candidate</h2>
+    <h2>Connection Wizard with a coherent property fixture</h2>
     <p>
-      Application commit fe68f0b05916070ada0f375313885205b67fb27e, which contains the reviewed wording commit 7fb067b203100cd5c590fef9bdc60d408cb06b95.
-      Local Distribution Central, real fonts, styles, and shell.
-      Each Booking.com response was intercepted in the browser and is simulated. No channel connection was created.
-      Playwright viewport screenshot, device pixel ratio 1, one viewport, not stitched.
-      CSS viewport and bitmap are the same size.
+      Local Distribution Central. Wizard sources and distribution styling are unchanged since
+      fe68f0b05916070ada0f375313885205b67fb27e, which contains the reviewed wording
+      7fb067b203100cd5c590fef9bdc60d408cb06b95.
+      The capture worktree was cf6a43bf517b0deb2a6e4cf8d572a1d20e840fd2. That commit adds only the integration person fixture and does not change this page.
+      Playwright viewport screenshots, device pixel ratio 1, one viewport, not stitched.
+      CSS viewport and bitmap are the same size: 1440×900 and 390×844.
+    </p>
+    <p>
+      Isolated fixture, not live data. The property response was
+      Karura Canopy Hotel, Nairobi, for slug karura-canopy.
+      Booking.com responses were intercepted problem+json. No provider connection was configured.
+      This is not Cloud pull request 58 and not the deployed Settings page.
+      The property chip on the desktop captures reads Karura Canopy Hotel, Nairobi. The page heading is the property name.
+    </p>
+    <p>
+      With the mobile drawer open, the top control reads Close menu. A click at that point hits the overlay Close menu button.
+      Main content is inert, and Tab stays inside the dialog. The dimmed page is the modal overlay. The shared navigation was not changed.
+    </p>
+
+    <h3>1440×900</h3>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-loading.png" alt="Desktop loading notice with the property name" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · wording 7fb067b · worktree cf6a43b · CSS 1440×900 · bitmap 1440×900 · property fixture Karura Canopy Hotel · intercepted delayed Booking.com response ·
+        <a href="wizard/property-fixture/1440x900-loading.png">loading</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-connection-setup.png" alt="Desktop incomplete connection setup" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · intercepted field connectionSetup · blocked, no Settings link, no Try again ·
+        <a href="wizard/property-fixture/1440x900-connection-setup.png">connection setup</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-rate-plan.png" alt="Desktop missing channel rate mapping" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · intercepted field ratePlan · blocked, no Settings link, no Try again ·
+        <a href="wizard/property-fixture/1440x900-rate-plan.png">rate mapping</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-local-gap.png" alt="Desktop local room-type gap" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · intercepted field roomType · blocked, Settings link, no Try again ·
+        <a href="wizard/property-fixture/1440x900-local-gap.png">local room-type gap</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-request-failure.png" alt="Desktop request failure" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · intercepted field connection · Try again, no Settings link ·
+        <a href="wizard/property-fixture/1440x900-request-failure.png">request failure</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-keyboard-focus.png" alt="Desktop Try again keyboard focus" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · keyboard focus on Try again, 2px accent outline ·
+        <a href="wizard/property-fixture/1440x900-keyboard-focus.png">keyboard focus</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/1440x900-request-failure-retried.png" alt="Desktop notice after Try again" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 1440×900 · bitmap 1440×900 · after Try again, a second intercepted request was made ·
+        <a href="wizard/property-fixture/1440x900-request-failure-retried.png">after retry</a>
+      </figcaption>
+    </figure>
+
+    <h3>390×844</h3>
+    <figure>
+      <img src="wizard/property-fixture/390x844-nav-closed.png" alt="Mobile navigation closed" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · navigation closed · property heading Karura Canopy Hotel ·
+        <a href="wizard/property-fixture/390x844-nav-closed.png">navigation closed</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-nav-open.png" alt="Mobile navigation open" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · navigation open · overlay receives the click · main inert · focus stays in the dialog ·
+        <a href="wizard/property-fixture/390x844-nav-open.png">navigation open</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-loading.png" alt="Mobile loading notice" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · intercepted delayed Booking.com response ·
+        <a href="wizard/property-fixture/390x844-loading.png">loading</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-connection-setup.png" alt="Mobile incomplete connection setup" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · intercepted field connectionSetup · blocked, no Settings link, no Try again ·
+        <a href="wizard/property-fixture/390x844-connection-setup.png">connection setup</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-rate-plan.png" alt="Mobile missing channel rate mapping" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · intercepted field ratePlan · blocked, no Settings link, no Try again ·
+        <a href="wizard/property-fixture/390x844-rate-plan.png">rate mapping</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-local-gap.png" alt="Mobile local room-type gap" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · intercepted field roomType · blocked, Settings link, no Try again ·
+        <a href="wizard/property-fixture/390x844-local-gap.png">local room-type gap</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-request-failure.png" alt="Mobile request failure" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · intercepted field connection · Try again, no Settings link ·
+        <a href="wizard/property-fixture/390x844-request-failure.png">request failure</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-keyboard-focus.png" alt="Mobile Try again keyboard focus" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · keyboard focus on Try again, 2px accent outline ·
+        <a href="wizard/property-fixture/390x844-keyboard-focus.png">keyboard focus</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="wizard/property-fixture/390x844-request-failure-retried.png" alt="Mobile notice after Try again" />
+      <figcaption>
+        Local Distribution Central · wizard sources fe68f0b · CSS 390×844 · bitmap 390×844 · after Try again, a second intercepted request was made ·
+        <a href="wizard/property-fixture/390x844-request-failure-retried.png">after retry</a>
+      </figcaption>
+    </figure>
+
+    <h2 class="superseded">Superseded: Connection Wizard at fe68f0b without a property response</h2>
+    <p class="superseded">
+      These remain local Distribution Central at fe68f0b05916070ada0f375313885205b67fb27e, with intercepted Booking.com responses, native 1440×900 and 390×844 viewports, device pixel ratio 1.
+      They are superseded because the property response was missing. The heading used the slug and the chip said Property unavailable.
+      They are not a connected provider.
     </p>
 
     <h3>1440×900</h3>
