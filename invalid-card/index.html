@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Invalid-card presentation</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #152b43; line-height: 1.45; }
+      h1 { font-size: 1.6rem; }
+      figure { margin: 2rem 0; }
+      img { max-width: 100%; height: auto; border: 1px solid #e0e8f1; }
+      figcaption { margin-top: 0.5rem; }
+      a { color: #175cae; }
+      .note { background: #f5f8fc; padding: 1rem; }
+      code { font-size: 0.92em; }
+    </style>
+  </head>
+  <body>
+    <h1>Invalid-card presentation</h1>
+    <p class="note">
+      Local HotelPlus Settings, application commit
+      <code>f9e67c89a2471626c99e88f22734b8e05d790b5a</code>
+      on <code>cursor/invalid-card-presentation</code> (pull request 78).
+      Before images are the merged application
+      <code>e0b86e17c2dc277a1d807bc59dceb5deee6787e6</code>.
+      Playwright viewport screenshots in Chrome, device pixel ratio 1, one viewport, not stitched.
+      Each bitmap is the same size as its CSS viewport.
+      Intercepted fixtures only. The signed-in person is Fixture User. Provider responses are simulated and are named in the captions.
+      No shared candidate or preview data was seeded. No channel credentials and no session token.
+      Håvar’s visual acceptance is still open. This page is not a WCAG certification.
+      Headless Chrome left <code>visualViewport.scale</code> at 1 after Control and Equal, so 200% and 400% browser zoom were not captured.
+      The 720 and 360 images are CSS viewports of those widths, not browser zoom.
+    </p>
+    <p>
+      <a href="invalid-card-visual-f9e67c8.zip">ZIP of these images</a>
+      · <a href="../">PR 67 gallery</a>
+    </p>
+
+    <h2>Before</h2>
+    <figure>
+      <img src="before-desktop-1440.png" alt="Merged invalid-card list at 1440" />
+      <figcaption>
+        Before. Merge commit e0b86e17. CSS viewport 1440×900, bitmap 1440×900.
+        Guest names and actions read as a bullet list under a long explanation.
+        <a href="before-desktop-1440.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="before-phone-390.png" alt="Merged invalid-card list at 390" />
+      <figcaption>
+        Before. CSS viewport 390×844, bitmap 390×844.
+        <a href="before-phone-390.png">image</a>
+      </figcaption>
+    </figure>
+
+    <h2>After, in the application shell</h2>
+    <figure>
+      <img src="after-desktop-1440-shell.png" alt="Corrected invalid-card panel at 1440" />
+      <figcaption>
+        After. CSS viewport 1440×900, bitmap 1440×900.
+        Simulated list: Amina Wekesa accepted, Baraka Otieno with no report.
+        <a href="after-desktop-1440-shell.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-phone-390.png" alt="Corrected invalid-card panel at 390" />
+      <figcaption>
+        After. CSS viewport 390×844, bitmap 390×844. Rows stack.
+        <a href="after-phone-390.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-tablet-768.png" alt="Corrected invalid-card panel at 768" />
+      <figcaption>
+        After. CSS viewport 768×1024, bitmap 768×1024. Columns remain aligned.
+        <a href="after-tablet-768.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-narrow-320.png" alt="Corrected invalid-card panel at 320" />
+      <figcaption>
+        After. CSS viewport 320×700, bitmap 320×700. No horizontal overflow.
+        <a href="after-narrow-320.png">image</a>
+      </figcaption>
+    </figure>
+
+    <h2>Confirmation</h2>
+    <figure>
+      <img src="after-dialog-1440.png" alt="Report invalid card dialog at 1440" />
+      <figcaption>
+        Shared dialog. Amina Wekesa, KC-1003, Booking.com. Blue Save and neutral Cancel.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-dialog-1440.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-dialog-390.png" alt="Report invalid card dialog at 390" />
+      <figcaption>
+        Shared dialog on a phone. CSS viewport 390×844, bitmap 390×844.
+        <a href="after-dialog-390.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-reduced-motion-dialog.png" alt="Dialog with reduced motion" />
+      <figcaption>
+        Same dialog with prefers-reduced-motion. The media query matched.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-reduced-motion-dialog.png">image</a>
+      </figcaption>
+    </figure>
+
+    <h2>List and report states</h2>
+    <figure>
+      <img src="after-failed-list.png" alt="Failed invalid-card list" />
+      <figcaption>
+        Failed initial read. Simulated HTTP 503. Copy: Bookings could not be loaded. Retry is offered.
+        This is not the empty-success screen. CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-failed-list.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-empty-list.png" alt="Empty invalid-card list" />
+      <figcaption>
+        Successful empty list. Copy: No eligible Booking.com bookings to show.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-empty-list.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-uncertain.png" alt="Uncertain invalid-card recovery" />
+      <figcaption>
+        Simulated provider response UNCERTAIN. Label: Provider response unconfirmed.
+        The explanation says the check reads the report saved in HotelPlus.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-uncertain.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-accepted-and-unresolved.png" alt="Accepted booking beside an unresolved save" />
+      <figcaption>
+        Simulated ACCEPTED for Amina beside a lost save for Baraka.
+        Baraka shows Save not confirmed and Check report status. Amina is not offered another report.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-accepted-and-unresolved.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-recovered-omitted.png" alt="Recovered report kept after the list omits it" />
+      <figcaption>
+        Simulated ACCEPTED save, then the next list omits the booking.
+        Amina Wekesa and KC-1003 remain on the row. CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-recovered-omitted.png">image</a>
+      </figcaption>
+    </figure>
+
+    <h2>Keyboard and narrow reflow</h2>
+    <figure>
+      <img src="after-keyboard-focus.png" alt="Keyboard focus on Amina's report action" />
+      <figcaption>
+        Keyboard focus. The active control’s accessible name was
+        “Report invalid card for Amina Wekesa, KC-1003”.
+        CSS viewport 1440×900, bitmap 1440×900.
+        <a href="after-keyboard-focus.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-reflow-200.png" alt="Invalid-card panel at a 720 CSS viewport" />
+      <figcaption>
+        CSS viewport 720×900, bitmap 720×900. Not browser zoom. Rows stack. No horizontal overflow.
+        <a href="after-reflow-200.png">image</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="after-reflow-400.png" alt="Invalid-card panel at a 360 CSS viewport" />
+      <figcaption>
+        CSS viewport 360×800, bitmap 360×800. Not browser zoom. No horizontal overflow.
+        <a href="after-reflow-400.png">image</a>
+      </figcaption>
+    </figure>
+  </body>
+</html>
