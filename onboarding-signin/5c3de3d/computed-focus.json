@@ -1,0 +1,226 @@
+{
+  "page": "http://127.0.0.1:4173/",
+  "statusFulfilled": {
+    "enabled": true,
+    "linked": false
+  },
+  "shots": [
+    {
+      "file": "desktop-resting-1440.png",
+      "selector": null,
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": false,
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(201, 215, 230)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgba(0, 0, 0, 0)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "desktop-email-focus-1440.png",
+      "selector": "input[type=email]",
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": true,
+          "background": "rgb(244, 248, 252)",
+          "border": "rgb(20, 101, 206)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgba(0, 0, 0, 0)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "desktop-zoho-focus-1440.png",
+      "selector": "[data-zoho-sign-in=\"available\"]",
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": false,
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(201, 215, 230)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": true,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(214, 231, 250)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "desktop-submit-focus-1440.png",
+      "selector": "button[type=submit]",
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": false,
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(201, 215, 230)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgba(0, 0, 0, 0)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": true,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(214, 231, 250)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "phone-resting-390.png",
+      "selector": null,
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": false,
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(201, 215, 230)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgba(0, 0, 0, 0)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "phone-email-focus-390.png",
+      "selector": "input[type=email]",
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": true,
+          "background": "rgb(244, 248, 252)",
+          "border": "rgb(20, 101, 206)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgba(0, 0, 0, 0)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    },
+    {
+      "file": "phone-zoho-focus-390.png",
+      "selector": "[data-zoho-sign-in=\"available\"]",
+      "style": {
+        "text": "Skip to main content Onboarding Sign in with your Onboarding email. Continue with Zoho or Email Password Show Sign in Property Admin sign-in",
+        "email": {
+          "selector": "input[type=email]",
+          "focusVisible": false,
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(201, 215, 230)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "zoho": {
+          "selector": "[data-zoho-sign-in=\"available\"]",
+          "focusVisible": true,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(214, 231, 250)",
+          "outline": "none",
+          "shadow": "none"
+        },
+        "submit": {
+          "selector": "button[type=submit]",
+          "focusVisible": false,
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(29, 79, 145)",
+          "outline": "none",
+          "shadow": "none"
+        }
+      }
+    }
+  ]
+}
